@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<Dialog title="Add data">
+		<form:SimpleForm>
+			<Label text="ID"></Label>
+			<Input id="idInp"></Input>
+			<Label text="Name"></Label>
+			<Input id="nameInp"></Input>
+			<Label text="Marks"></Label>
+			<Input type="Number" id="marksInp"></Input>
+		</form:SimpleForm>
+		<beginButton>
+			<Button id="addbtn" press="add" text="Add"></Button>
+			<!--<Button text="Add"></Button>-->
+		</beginButton>
+		<endButton>
+			<Button id="closebtn" press="onDialogclose" text="Close"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

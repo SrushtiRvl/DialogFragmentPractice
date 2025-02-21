@@ -1,0 +1,12 @@
+/* Enter your custom styles here */
+.green{
+	background-color:rgba(0, 128, 0, 0.196);
+	color:white;
+}
+.red{
+	background-color:rgba(255, 0, 0, 0.251);
+	color:white;
+}
+.white.sapMLabel {
+	/* color:grey; */
+}

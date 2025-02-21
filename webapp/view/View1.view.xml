@@ -1,0 +1,57 @@
+<mvc:View controllerName="project3.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+    	<!-- <content></content> -->
+				<Button id="dialogbtn" press="openDialog" text="Add Data" growing="true" growingThreshold="2" growingScrollToLoad="false"></Button>
+				<!--<core:Fragment fragmentName="DialogFragmentPractice.fragments.displayData" type="XML"/>-->
+				<table:Table rows="{/students}" rowsUpdated="onRowsUpdated" id="myTable" >
+					<!--<columns>-->
+					<!--	<Column>-->
+					<!--		<Label text="ID"></Label>-->
+					<!--	</Column>-->
+					<!--	<Column>-->
+					<!--		<Label text="Name"></Label>-->
+					<!--	</Column>-->
+					<!--	<Column>-->
+					<!--		<Label text="Marks"></Label>-->
+					<!--	</Column>-->
+					<!--</columns>-->
+					<!--<items state="Success">-->
+					<!--	<ColumnListItem>-->
+					<!--		<cells>-->
+					<!--			<Text text="{id}"></Text>-->
+					<!--		</cells>-->
+					<!--		<cells>-->
+					<!--			<Text text="{name}"></Text>-->
+					<!--		</cells>-->
+					<!--		<cells>-->
+					<!--			<Text text="{marks}"></Text>-->
+					<!--		</cells>-->
+					<!--	</ColumnListItem>-->
+					<!--</items>-->
+					<table:columns>
+						<table:Column>
+							<Label text="ID"></Label>
+							<table:template>
+								<Label text="{id}" class="white"></Label>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="Name"></Label>
+							<table:template>
+								<Label class="white" text="{path:'name',formatter:'.formatter.capitalize'  }"></Label>
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="Marks"></Label>
+							<table:template>
+								<!-- <Label text="{marks}" class="white"></Label> -->
+								<StepInput value="{marks}" change="onRowsUpdated"></StepInput>
+								<!-- <ObjectStatus text="{marks}" state="{path:'marks',formatter:'.formatter.validateMarks'  }" ></ObjectStatus> -->
+							</table:template>
+						</table:Column>
+					</table:columns>
+				</table:Table>
+    </Page>
+</mvc:View>
