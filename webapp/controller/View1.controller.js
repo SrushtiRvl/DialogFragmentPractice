@@ -6,11 +6,59 @@ sap.ui.define([
 
 	return Controller.extend("project3.controller.View1", {
 	formatter:formatter,
+	formateit:function(e){
+		var a=e.getSource().getProperty("value")
+		var val=e.getParameter('newValue').split(a).join("")
+		var odata=this.getOwnerComponent().getModel().getProperty("/data")
+		this.getOwnerComponent().getModel().setProperty("/data",odata+val);
+		if(e.getParameter('newValue').length>14){
+			this.getOwnerComponent().getModel().setProperty("/data",odata.substring(0,14))
+
+		}
+		// }
+		// else{
+			// e.setParameter('newValue',odata)
+			// e.setParameter('value',)
+		// }
+		
+		debugger
+	},
 	onInit:function(){
 		// this.getView().byId("myTable").attachRowsUpdated(function(oEvent){
 		// 	debugger;
 		// });
 		//this.getOwnerComponent().getModel().setDefaultBindingMode("OneWay")
+	},
+	filterIt:function(e){
+		debugger
+		// var data=e.getSource().getProperty('title').split(" ")
+		var oprator=e.getSource().getProperty('title')[0];
+		var oprand=Number.parseInt(e.getSource().getProperty('title').split(oprator)[1])
+		if(oprator=="<"){
+			oprator=sap.ui.model.FilterOperator.LT
+		}
+		else if(oprator=="="){
+			oprator=sap.ui.model.FilterOperator.EQ
+		}
+		else{
+			oprator=sap.ui.model.FilterOperator.GT
+		}
+		var filter=new sap.ui.model.Filter("marks",oprator,oprand)
+		var master=[filter]
+		this.getView().byId("students").getBinding('items').filter(master)
+		this.fragClose()
+	},
+	filterData:function(){
+		if(!this.frag){
+			this.frag=sap.ui.xmlfragment("project3.fragments.filter",this)
+			this.getView().addDependent(this.frag);
+		}
+		this.frag.open()
+	},
+	fragClose:function(){
+		this.frag.close()
+		this.frag.destroy()
+		this.frag=null
 	},
 	onRowsUpdated:function(){
         var oTable=this.getView().byId('myTable');

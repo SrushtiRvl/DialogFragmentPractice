@@ -1,11 +1,118 @@
 {
-	"students":[{
-		"id":1,
-		"name":"srushti",
-		"marks":90
-	},{
-		"id":2,
-		"name":"charmi",
-		"marks":20
-	}]
+	"data":"",
+	"students": [
+		{
+			"id": 1,
+			"name": "Srushti",
+			"marks": 90,
+			"city": "Ahmedabad"
+		},{
+			"id": 2,
+			"name": "Charmi",
+			"marks": 20,
+			"city": "Delhi"
+		},
+		{
+			"id": 3,
+			"name": "Aarav",
+			"marks": 85,
+			"city": "Bangalore"
+		},
+		{
+			"id": 4,
+			"name": "Diya",
+			"marks": 78,
+			"city": "Pune"
+		},
+		{
+			"id": 5,
+			"name": "Kabir",
+			"marks": 92,
+			"city": "Hyderabad"
+		},
+		{
+			"id": 6,
+			"name": "Meera",
+			"marks": 88,
+			"city": "Chennai"
+		},
+		{
+			"id": 7,
+			"name": "Rohan",
+			"marks": 45,
+			"city": "Kolkata"
+		},
+		{
+			"id": 8,
+			"name": "Anika",
+			"marks": 73,
+			"city": "Ahmedabad"
+		},
+		{
+			"id": 9,
+			"name": "Yash",
+			"marks": 95,
+			"city": "Jaipur"
+		},
+		{
+			"id": 10,
+			"name": "Ishita",
+			"marks": 67,
+			"city": "Lucknow"
+		},
+		{
+			"id": 11,
+			"name": "Rishi",
+			"marks": 50,
+			"city": "Bhopal"
+		},
+		{
+			"id": 12,
+			"name": "Mira",
+			"marks": 80,
+			"city": "Surat"
+		},
+		{
+			"id": 13,
+			"name": "Varun",
+			"marks": 60,
+			"city": "Nagpur"
+		},
+		{
+			"id": 14,
+			"name": "Neha",
+			"marks": 88,
+			"city": "Chandigarh"
+		},
+		{
+			"id": 15,
+			"name": "Sameer",
+			"marks": 42,
+			"city": "Patna"
+		},
+		{
+			"id": 16,
+			"name": "Tanya",
+			"marks": 77,
+			"city": "Indore"
+		},
+		{
+			"id": 17,
+			"name": "Dev",
+			"marks": 91,
+			"city": "Vadodara"
+		},
+		{
+			"id": 18,
+			"name": "Zara",
+			"marks": 85,
+			"city": "Coimbatore"
+		},
+		{
+			"id": 19,
+			"name": "Harsh",
+			"marks": 68,
+			"city": "Visakhapatnam"
+		}
+	]
 }

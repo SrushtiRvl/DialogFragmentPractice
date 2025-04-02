@@ -4,6 +4,11 @@
     <Page id="page" title="{i18n>title}">
     	<!-- <content></content> -->
 				<Button id="dialogbtn" press="openDialog" text="Add Data" growing="true" growingThreshold="2" growingScrollToLoad="false"></Button>
+				<Input id='input' value="{path:'/data', formatter:'.formatter.change'}"  liveChange="formateit"></Input>
+				<Button id="filter" press="filterData" text="Filter" icon="sap-icon://filter"/>
+				<List items="{/students}" id="students">
+				<ObjectListItem title="{name}" number="{marks}" intro="{city}"></ObjectListItem>
+				</List>
 				<!--<core:Fragment fragmentName="DialogFragmentPractice.fragments.displayData" type="XML"/>-->
 				<table:Table rows="{/students}" rowsUpdated="onRowsUpdated" id="myTable" >
 					<!--<columns>-->
@@ -33,7 +38,7 @@
 					<table:columns>
 						<table:Column>
 							<Label text="ID"></Label>
-							<table:template>
+							<table:template >
 								<Label text="{id}" class="white"></Label>
 							</table:template>
 						</table:Column>
@@ -49,6 +54,12 @@
 								<!-- <Label text="{marks}" class="white"></Label> -->
 								<StepInput value="{marks}" change="onRowsUpdated"></StepInput>
 								<!-- <ObjectStatus text="{marks}" state="{path:'marks',formatter:'.formatter.validateMarks'  }" ></ObjectStatus> -->
+							</table:template>
+						</table:Column>
+						<table:Column>
+							<Label text="City"></Label>
+							<table:template>
+								<Label text="{city}" class="white"></Label>
 							</table:template>
 						</table:Column>
 					</table:columns>
